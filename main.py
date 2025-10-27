@@ -4,10 +4,9 @@ from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 
 origins = [
-    "http://localhost:3000",  # local testing
-    "https://gin-rummy-frontend-mtogwoe2p-tylers-projects-0e8a6c28.vercel.app"  # your Vercel frontend
+    "http://localhost:3000",
+    "https://gin-rummy-frontend-mtogwoe2p-tylers-projects-0e8a6c28.vercel.app"
 ]
-
 
 app.add_middleware(
     CORSMiddleware,
@@ -17,9 +16,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Test route
 @app.get("/detail/{game_id}")
-async def get_detail(game_id: int):
+def get_detail(game_id: int):
     return {
         "game_id": game_id,
         "status": "waiting",
@@ -27,5 +25,5 @@ async def get_detail(game_id: int):
     }
 
 @app.get("/")
-async def root():
-    return {"message": "Gin Rummy backend running!"}
+def root():
+    return {"message": "Gin Rummy backend is running!"}
