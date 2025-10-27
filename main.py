@@ -3,11 +3,11 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
-# Allow requests from your frontend
 origins = [
-    "http://localhost:3000",  # For local testing
-    "https://tccc-gin-rummy.onrender.com/"  # Replace with your Vercel frontend URL
+    "http://localhost:3000",  # local testing
+    "https://gin-rummy-frontend-mtogwoe2p-tylers-projects-0e8a6c28.vercel.app"  # your Vercel frontend
 ]
+
 
 app.add_middleware(
     CORSMiddleware,
